@@ -252,7 +252,7 @@ a.showdiff {
 	padding-bottom: 5px;
 }
 
-.filemerge {
+.filemerge, .github {
 	float: right;
 	text-align: center;
 }

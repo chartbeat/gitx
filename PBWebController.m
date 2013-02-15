@@ -153,6 +153,30 @@
 		return YES;
 }
 
+- (void) openGitHub:(NSString*)sha;
+{
+    NSLog(@"PBWebController::openGitHub()");
+    // assuming "origin" here
+    if (![repository hasRemotes]) {
+        NSLog(@"Repository has no remotes");
+        return;
+    }
+    NSString* remote = [repository URLsForRemote:@"origin"][0];
+    NSLog(@"Remote URL: %@", remote);
+    
+    // TODO: should also support http:// github urls
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"git@github.com:(.+)\\.git" options:0 error:NULL];
+    NSTextCheckingResult *match = [regex firstMatchInString:remote options:0 range:NSMakeRange(0, [remote length])];
+    NSString* path = [remote substringWithRange:[match rangeAtIndex:1]];
+    if (![path length]) {
+        NSLog(@"Origin does not seem to be a github repo?");
+        return;
+    }
+    NSString* fullurl = [NSString stringWithFormat:@"https://github.com/%@/commit/%@", path, sha];
+    NSLog(@"Full repo URL: %@", fullurl);
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:fullurl]];
+}
+
 #pragma mark Using async function from JS
 
 - (void) runCommand:(WebScriptObject *)arguments inRepository:(PBGitRepository *)repo callBack:(WebScriptObject *)callBack

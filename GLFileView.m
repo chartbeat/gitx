@@ -457,6 +457,8 @@
     if([txt rangeOfString:@"Binary files"].location==NSNotFound){
         [res appendString:[NSString stringWithFormat:@"<div class='filemerge'><a href='' onclick='openFileMerge(\"%@\",\"{SHA_PREV}\",\"{SHA}\"); return false;'><img src='GitX://app:/filemerge' width='32' height='32'/><br/>open in<br/>FileMerge</a></div>",fileName]];
     }
+
+    [res appendString:@"<div class='github'><a href='' onclick='openGitHub(\"{SHA}\"); return false;'><img src='../../images/github.png' width='32' height='32'/><br/>open on<br/>GitHub</a></div>"];
     
     [res appendString:@"</td></tr>"];
     

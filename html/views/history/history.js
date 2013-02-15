@@ -11,6 +11,11 @@ var openFileMerge = function(file,sha,sha2) {
 	Controller.openFileMerge_sha_sha2_(file,sha,sha2);
 }
 
+var openGitHub = function(sha) {
+        alert("openGitHub(" + sha + ")");
+        Controller.openGitHub_(sha);
+}
+
 var showImage = function(element, filename)
 {
 	element.outerHTML = '<img src="GitX://' + commit.sha + '/' + filename + '">';

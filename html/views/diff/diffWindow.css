@@ -95,7 +95,7 @@ table.diff tbody tr.header {
 	background-image: -webkit-gradient(linear,left top,left bottom, color-stop(0, rgba(244, 244, 244,1)), color-stop(1, rgba(215,215,215,1)));
 }
 
-table.diff .filemerge {
+table.diff .filemerge, table.diff .github, {
 	float: right;
 	text-align: center;
 }

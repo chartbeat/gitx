@@ -17,3 +17,8 @@ var openFileMerge = function(file,sha,sha2) {
 	alert(sha2);
 	Controller.openFileMerge_sha_sha2_(file,sha,sha2);
 }
+
+var openGitHub = function(sha) {
+        alert("openGitHub(" + sha + ")");
+        Controller.openGitHub_(sha);
+}

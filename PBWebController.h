@@ -30,4 +30,11 @@
 - (void) closeView;
 - (BOOL) isFeatureEnabled:(NSString *)feature;
 
+/**
+ * Open the given commit on github.com in a browser.
+ *
+ * @param sha Hash of the commit to open.
+ */
+- (void) openGitHub:(NSString*)sha;
+
 @end

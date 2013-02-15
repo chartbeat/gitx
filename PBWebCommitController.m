@@ -320,7 +320,6 @@ const NSString *kAuthorKeyDate = @"date";
 	[repository handleInWorkDirForArguments:args];
 }
 
-
 - (void) sendKey: (NSString*) key
 {
 	id script = [view windowScriptObject];

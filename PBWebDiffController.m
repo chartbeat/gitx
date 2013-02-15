@@ -49,6 +49,7 @@
 		[script callWebScriptMethod:@"showFile" withArguments:[NSArray arrayWithObject:diff]];
 }
 
+
 // TODO: need to be refactoring
 - (void) openFileMerge:(NSString*)file sha:(NSString *)sha sha2:(NSString *)sha2;
 {
